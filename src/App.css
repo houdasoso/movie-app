@@ -1,0 +1,37 @@
+
+body {
+  background-color: #c0c0d9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #343a40;
+  text-shadow: #343a40;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.movie-card {
+  width: 18rem;
+
+}
+
+.movie-card img {
+  height: auto;
+  object-fit: cover;
+}
