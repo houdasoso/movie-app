@@ -1,4 +1,3 @@
-
 body {
   background-color: #c0c0d9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,4 +33,10 @@ h1 {
 .movie-card img {
   height: auto;
   object-fit: cover;
+}
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
 }

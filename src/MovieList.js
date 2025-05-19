@@ -1,9 +1,12 @@
+import React from 'react';
 import MovieCard from './MovieCard';
 
 const MovieList = ({ movies }) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+  <div className="row">
     {movies.map((movie, index) => (
-      <MovieCard key={index} movie={movie} />
+      <div key={index} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 d-flex justify-content-center">
+        <MovieCard movie={movie} />
+      </div>
     ))}
   </div>
 );
