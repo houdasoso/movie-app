@@ -1,71 +1,103 @@
-# Getting Started with Create React App
+🎬 React Movie App :: 🎬 Best Movies
+A responsive React-based web application that allows users to view, filter, and add their favorite movies or TV shows. This app demonstrates practical usage of React components, React Hooks like useState, and Bootstrap for styling and responsiveness.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Features
 
-## Available Scripts
+Filter movies by title or rating
 
-In the project directory, you can run:
+Add new movies using a dynamic form
 
-### `npm start`
+Responsive design with Bootstrap 5
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Component-based architecture for clean and scalable code
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🧱 Project Structure & Components
+📁 App.js
+The root component of the app
 
-### `npm test`
+Manages the global state of movies and filters
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Contains logic for:
 
-### `npm run build`
+Filtering the list of movies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Adding a new movie
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Renders child components: Filter, AddMovie, and MovieList
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🎞️ MovieCard.js
+Reusable card component for displaying a single movie
 
-### `npm run eject`
+Props:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+movie: contains title, description, posterURL, rating
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Uses Bootstrap’s card classes to style the UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ensures responsive image and text layout
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🎬 MovieList.js
+Displays a list of movies as a responsive Bootstrap grid
 
-## Learn More
+Props:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+movies: an array of movie objects
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Maps over the movies array and renders a MovieCard for each movie
 
-### Code Splitting
+Uses Bootstrap’s grid system (row + col) for responsiveness
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔎 Filter.js
+Provides input fields to filter movies by title or rating
 
-### Analyzing the Bundle Size
+Props:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+setFilter: function to update the filter criteria in App.js
 
-### Making a Progressive Web App
+Contains:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+A text input for title search
 
-### Advanced Configuration
+A number input for rating filter
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Updates the filter state on each change to re-render filtered movies
 
-### Deployment
+➕ AddMovie.js
+Contains a toggleable form to add a new movie
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Props:
 
-### `npm run build` fails to minify
+handleAddMovie: function passed from App.js to update the movie list
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# movie-app
+Uses useState to manage both:
+
+Visibility of the form (showForm)
+
+Form inputs for the new movie
+
+On submission:
+
+Sends the movie data to App.js
+
+Resets the form
+
+Hides the form again
+
+ Styling and Responsiveness
+Bootstrap 5 is used throughout the app for consistent styling
+
+Layout and components are responsive using Bootstrap’s grid (container, row, col-md, etc.)
+
+Custom styles are added in App.css for spacing, card sizing, and mobile responsiveness
+
+
+🧠 Skills Demonstrated
+React fundamentals (components, props, state)
+
+Conditional rendering (useState)
+
+React Bootstrap integration
+
+Form handling in React
+
+Filtering logic with .filter() and .includes()
