@@ -1,22 +1,27 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import MovieList from './MovieList';
 import Filter from './Filter';
 import AddMovie from './AddMovie';
+import MovieDetails from './MovieDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 const App = () => {
   const [movies, setMovies] = useState([
     {
       title: "the princesse diaries",
-      description: "Mia Thermopolis est une jeune fille timide et discrète qui mène une existence paisible à San Francisco. Un beau jour, la grand-mère de Mia, la très stricte Clarisse Renaldi, vient lui rendre visite. Originaire de Génovie, un petit royaume perdu quelque part sur le vieux continent, elle annonce à Mia qu'elle est l'unique héritière du trône. Avant d'être nommée princesse, celle-ci devra apprendre quelques règles de bonne conduite.",
+      description: "Mia Thermopolis est une jeune fille timide et discrète...",
       posterURL: "the princesse diaries.jpg",
       rating: 3,
+      trailer: 'https://www.youtube.com/embed/CzcGwB7qat8',
     },
     {
       title: "stich",
-      description: "Stitch and Lilo find their friend, Jumba, abducted by an alien. Soon, the alien demands a ransom for Jumba's release and the duo must do everything to get Jumba back.",
+      description: "Stitch and Lilo find their friend, Jumba...",
       posterURL: "stich.jpg",
       rating: 4,
+      trailer: 'https://www.youtube.com/embed/VWqJifMMgZE',
     },
   ]);
 
@@ -32,15 +37,27 @@ const App = () => {
   );
 
   return (
-  <div className="container">
-    <h1>🎬 Best Movies </h1>
-    <Filter setFilter={setFilter} />
-    <AddMovie handleAddMovie={handleAddMovie} />
-    <div className="movie-list">
-      <MovieList movies={filteredMovies} />
-    </div>
-  </div>
-);
+    <Router>
+      <div className="container">
+        <h1>🎬 Best Movies</h1>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filter setFilter={setFilter} />
+                <AddMovie handleAddMovie={handleAddMovie} />
+                <div className="movie-list">
+                  <MovieList movies={filteredMovies} />
+                </div>
+              </>
+            }
+          />
+          <Route path="/movie/:id" element={<MovieDetails movies={movies} />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
